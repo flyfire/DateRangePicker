@@ -1,19 +1,18 @@
 package com.savvi.rangepickersample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.savvi.rangedatepicker.*;
+import com.savvi.rangedatepicker.CalendarPickerView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 public class SampleActivity extends AppCompatActivity {
@@ -51,7 +50,7 @@ public class SampleActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault())) //
+        calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, yyyy", Locale.getDefault())) //
                 .inMode(CalendarPickerView.SelectionMode.RANGE) //
                 .withSelectedDate(new Date())
                 .withDeactivateDates(list)
